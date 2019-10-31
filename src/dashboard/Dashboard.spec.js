@@ -10,6 +10,20 @@ import Dashboard from './Dashboard';
 afterEach(rtl.cleanup);
 
 test('<Dashboard /> snapshot', () => {
+  // Arrange
   const wrapper = rtl.render(<Dashboard />);
+  // Assert
   expect(wrapper.asFragment()).toMatchSnapshot();
+});
+
+describe('Dashboard Testing Initial', () => {
+  it('has four buttons labeled Unlocked, Open, Lock Gate, and Close Gate', () => {
+    // Arrange
+    const { getByText } = rtl.render(<Dashboard />);
+    // Assert
+    expect(getByText('Unlocked'));
+    expect(getByText('Open'));
+    expect(getByText('Lock Gate'));
+    expect(getByText('Close Gate'));
+  });
 });
