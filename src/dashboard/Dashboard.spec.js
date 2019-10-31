@@ -17,7 +17,7 @@ test('<Dashboard /> snapshot', () => {
 });
 
 describe('Dashboard Testing Initial', () => {
-  it('has four buttons labeled Unlocked, Open, Lock Gate, and Close Gate', () => {
+  it('has four buttons labeled Unlocked, Open, Lock Gate, and Close Gate, with default values of Unlocked and Open', () => {
     // Arrange
     const { getByText } = rtl.render(<Dashboard />);
     // Assert
